@@ -7,7 +7,7 @@ array.sort()
 
 # 기준은 gap이다. 즉 mid는 start(가장 작은 gap)과 end(가장 큰 gap)에서 최적의 값을 찾아간다.
 # 조건(다음 집이 가장 최근 공유기를 설치한 집(value)에 mid를 더한 값보다 크면)을 만족하면
-# 공유기를 설치하는 집(value)을 최신화하고, count(공유기의 수)를 증가시켜준다.
+# 공유기를 설치하는 집(value)을 최신화하고, count(공유기의 수)를 증가시켜준다..
 start = array[1] - array[0]
 end = array[-1] - array[0]
 result = 0
