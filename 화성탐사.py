@@ -7,7 +7,7 @@ dy = [0, 0, -1, 1]
 for tc in range(int(input())):
     n = int(input())
 
-    graph = collections.defaultdict(list)
+    graph = collections.defaultdict(int)
     dist = collections.defaultdict(int)
     for i in range(n):
         lst = list(map(int, input().split()))
