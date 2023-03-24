@@ -77,7 +77,9 @@ def dfs(v, discovered=[]):
 
     return discovered
 
+
 print(dfs(1))
+
 
 def bfs(start_v):
     discovered = [start_v]
@@ -90,5 +92,6 @@ def bfs(start_v):
                 discovered.append(w)
 
     return discovered
+
 
 print(bfs(1))

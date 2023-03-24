@@ -10,7 +10,6 @@ dy = [0, 0, -1, 1]
 for _ in range(n):
     grid.append(list(map(int, input())))
 
-discovered = [[0, 0]]
 queue = [[0, 0]]
 while queue:
     v = queue.pop(0)
