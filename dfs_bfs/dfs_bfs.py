@@ -97,27 +97,50 @@ graph = {
 # print(bfs(1))
 
 
+# def dfs(v, discovered=[]):
+#     discovered.append(v)
+#     for w in graph[v]:
+#         if w not in discovered:
+#             discovered = dfs(w, discovered)
+#
+#     return discovered
+#
+#
+# def bfs(start_v):
+#     q = [start_v]
+#     discovered = [start_v]
+#     while q:
+#         v = q.pop(0)
+#         for w in graph[v]:
+#             if w not in discovered:
+#                 q.append(w)
+#                 discovered.append(w)
+#
+#     return discovered
+#
+#
+# print(dfs(1))
+# print(bfs(1))
+
 def dfs(v, discovered=[]):
     discovered.append(v)
     for w in graph[v]:
         if w not in discovered:
             discovered = dfs(w, discovered)
-
     return discovered
 
 
 def bfs(start_v):
     q = [start_v]
     discovered = [start_v]
+
     while q:
         v = q.pop(0)
         for w in graph[v]:
             if w not in discovered:
                 q.append(w)
                 discovered.append(w)
-
     return discovered
-
 
 print(dfs(1))
 print(bfs(1))

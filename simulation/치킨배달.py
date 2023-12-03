@@ -34,6 +34,42 @@
 #     answer = min(answer, min_distance(house, c))
 # print(answer)
 
+# from itertools import combinations
+#
+# n, m = map(int, input().split())
+#
+# grid = []
+# house = []
+# chicken = []
+#
+# for _ in range(n):
+#     grid.append(list(map(int, input().split())))
+#
+# for i in range(n):
+#     for j in range(n):
+#         if grid[i][j] == 1:  # 집
+#             house.append([i, j])
+#         elif grid[i][j] == 2:  # 치킨
+#             chicken.append([i, j])
+#
+#
+# def min_distance(house, comb):
+#     tmp = []  # 각 집마다 comb중 가장 가까운거 저장
+#     for hx, hy in house:
+#         m = 99999
+#         for cx, cy in comb:
+#             m = min(m, abs(cx - hx) + abs(cy - hy))
+#         tmp.append(m)
+#
+#     return sum(tmp)
+#
+#
+# cc = combinations(chicken, m)
+# answer = 99999
+# for c in cc:
+#     answer = min(answer, min_distance(house, c))
+# print(answer)
+
 from itertools import combinations
 
 n, m = map(int, input().split())
@@ -42,30 +78,26 @@ grid = []
 house = []
 chicken = []
 
-for _ in range(n):
-    grid.append(list(map(int, input().split())))
-
 for i in range(n):
     for j in range(n):
-        if grid[i][j] == 1:  # 집
+        if grid[i][j] == 1:
             house.append([i, j])
-        elif grid[i][j] == 2:  # 치킨
+        elif grid[i][j] == 2:
             chicken.append([i, j])
 
-
 def min_distance(house, comb):
-    tmp = []  # 각 집마다 comb중 가장 가까운거 저장
+    tmp = []
     for hx, hy in house:
         m = 99999
         for cx, cy in comb:
             m = min(m, abs(cx - hx) + abs(cy - hy))
         tmp.append(m)
-
-    return sum(tmp)
+    return sum(m)
 
 
 cc = combinations(chicken, m)
 answer = 99999
 for c in cc:
     answer = min(answer, min_distance(house, c))
+
 print(answer)
